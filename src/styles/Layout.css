@@ -1,0 +1,21 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header, footer {
+    background-color: #237547;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  main {
+    flex: 1;
+    display: flex;
+  }
+  

@@ -1,0 +1,14 @@
+/* src/components/ImageSlider.module.css */
+.sliderWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  .sliderBox {
+    border: 2px solid black;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  

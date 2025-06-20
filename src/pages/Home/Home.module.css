@@ -1,0 +1,67 @@
+.homePage {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("../../assets/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    flex-direction: row;
+  }
+  
+  .homePage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    pointer-events: none; 
+  }
+  
+  
+  .mainContent {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .welcome {
+    background-color: rgba(0, 0, 0, 0.4); /* mörk bakgrund */
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    color: white;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .homePage {
+      flex-direction: column;
+      background-position: top;
+    }
+  
+    .mainContent {
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .welcome h1 {
+      font-size: 1.5rem;
+    }
+  
+    .welcome p {
+      font-size: 1rem;
+    }
+  }
+  
