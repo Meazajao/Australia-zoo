@@ -1,75 +1,97 @@
 .page {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
-  background: url("../../assets/hero.jpg") center/cover no-repeat;
-  position: relative;
   box-sizing: border-box;
+  background-image: url("../../assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .contentWrapper {
   flex: 1;
+  min-width: 0;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  box-sizing: border-box;
 }
+
 
 .hero {
   position: relative;
   width: 100%;
-  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
+  padding: 3rem 1rem;
 }
 
 .heroContent {
-  position: relative;
-  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
   color: white;
+  max-width: 750px;
   text-align: center;
-  max-width: 800px;
-  padding: 1rem;
-  margin: 0 auto;
+  z-index: 2;
 }
 
 .heroContent h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .heroContent p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin: 0 auto;
+  margin: 0;
 }
 
+
 .main {
-  z-index: 2;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .animalRow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   background-color: rgba(255, 255, 255, 0.88);
   padding: 1.5rem;
   border-radius: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .reverse {
@@ -86,6 +108,7 @@
 
 .textBox {
   flex: 1;
+  max-width: 500px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: #333;
@@ -96,36 +119,39 @@
   color: #2c2c2c;
 }
 
-/* ---------- iPad / mellan-stora skärmar ---------- */
+/* ---------- iPad (max 1024px) ---------- */
 @media (max-width: 1024px) {
-  .heroContent h1 {
-    font-size: 2.3rem;
-  }
-
-  .heroContent p {
-    font-size: 1.05rem;
-  }
-
-  .imageCircle {
-    width: 160px;
-    height: 160px;
-  }
-
-  .animalRow {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* ---------- Mobil ---------- */
-@media (max-width: 768px) {
   .page {
     flex-direction: column;
   }
 
-  .hero {
-    height: auto;
-    padding: 2rem 1rem;
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .imageCircle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .textBox {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .animalRow {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Mobil (max 768px) ---------- */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
   }
 
   .heroContent h1 {
@@ -136,18 +162,18 @@
     font-size: 1rem;
   }
 
+  .imageCircle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .textBox {
+    font-size: 0.9rem;
+  }
+
   .animalRow,
   .reverse {
     flex-direction: column;
     text-align: center;
-  }
-
-  .imageCircle {
-    width: 130px;
-    height: 130px;
-  }
-
-  .textBox {
-    font-size: 0.95rem;
   }
 }

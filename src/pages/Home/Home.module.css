@@ -2,7 +2,6 @@
     display: flex;
     min-height: 100vh;
     width: 100%;
-    box-sizing: border-box;
     background-image: url("../../assets/hero.jpg");
     background-size: cover;
     background-position: center;
@@ -34,7 +33,7 @@
   }
   
   .welcome {
-    background-color: rgba(0, 0, 0, 0.4); /* mörk bakgrund */
+    background-color: rgba(0, 0, 0, 0.4); 
     padding: 2rem;
     border-radius: 12px;
     backdrop-filter: blur(5px);
